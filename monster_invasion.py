@@ -4,6 +4,7 @@ import pygame
 
 from settings import Settings
 from archer import Archer
+from arrow import Arrow
 
 class MonsterInvasion:
     # Class for game assets/behavior.
@@ -38,6 +39,8 @@ class MonsterInvasion:
             self.archer.moving_left = True
         elif event.key == pygame.K_q:
             sys.exit()
+        elif event.key == pygame.K_SPACE:
+            self._fire_arrow()
 
     def _check_keyup_events(self, event):
         # Response to key releases
@@ -46,10 +49,18 @@ class MonsterInvasion:
         elif event.key == pygame.K_LEFT:
             self.archer.moving_left = False
 
+    def _fire_arrow(self):
+        # Create new arrow and add to arrow group.
+        new_arrow = Arrow(self)
+        self.arrows.add(new_arrow)
+
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
         self.screen.fill(self.settings.bg_color)
         self.archer.blitme()
+
+        for arrow in self.arrows.sprites():
+            arrow.draw_arrow()
 
         # Make most recently drawn screen visible.
         pygame.display.flip()
