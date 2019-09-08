@@ -25,3 +25,7 @@ class Arrow(Sprite):
         
         #update rect position.
         self.rect.y = self.y
+
+    def draw_arrow(self):
+        # Draw the arrow to screen.
+        pygame.draw.rect(self.screen, self.color, self.rect)
