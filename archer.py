@@ -3,10 +3,10 @@ import pygame
 class Archer:
   # A class to manage the archer.
 
-  def __init__(self, ai_game):
+  def __init__(self, mi_game):
     # Initialize archer and set its starting position.
-    self.screen = ai_game.screen
-    self.screen_rect = ai_game.screen.get_rect()
+    self.screen = mi_game.screen
+    self.screen_rect = mi_game.screen.get_rect()
 
     # Load archer image and get its rect.
     self.image = pygame.image.load('images/archer.bmp')
@@ -14,3 +14,7 @@ class Archer:
 
     # Start each new archer at bottom center of screen.
     self.rect.modbottom = self.screen_rect.midbottom
+
+  def blitme(self):
+    # Draw archer at its current location.
+    self.screen.blit(self.image, self.rect)
