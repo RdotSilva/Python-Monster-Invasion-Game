@@ -1,7 +1,7 @@
 class Settings:
-  # Stores all of the settings for the game.
+    # Stores all of the settings for the game.
 
-  def __init__(self):
+    def __init__(self):
     # Initialize settings
 
     # Screen settings
