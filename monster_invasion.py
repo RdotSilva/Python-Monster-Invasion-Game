@@ -25,15 +25,20 @@ class MonsterInvasion:
             if event.type == pygame.QUIT:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
-                    self.archer.moving_right = True
-                elif event.key == pygame.K_LEFT:
-                    self.archer.moving_left = True
+                self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_RIGHT:
                     self.archer.moving_right = False
                 elif event.key == pygame.K_LEFT:
                     self.archer.moving_left = False
+
+    def _check_keydown_events(self, event):
+        # Respond to keypresses.
+        if event.key == pygame.K_RIGHT:
+            self.archer.moving_right = True
+        elif event.key == pygame.K_LEFT:
+            self.archer.moving_left = True
+
 
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
