@@ -8,3 +8,6 @@ class Settings:
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (0, 0, 0)
+
+        # Archer settings
+        self.archer_speed = 1.5
