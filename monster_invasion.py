@@ -22,12 +22,12 @@ class MonsterInvasion:
     def _check_events(self):
         # Watch for keyboard/mouse events.
         for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit()
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT:
-            # Move archer right
-            self.archer.rect.x += 1
+            if event.type == pygame.QUIT:
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    # Move archer right
+                    self.archer.rect.x += 1
 
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
@@ -40,8 +40,8 @@ class MonsterInvasion:
     def run_game(self):
         # Start the main game loop.
         while True:
-        self._check_events()
-        self._update_screen()
+            self._check_events()
+            self._update_screen()
 
 if __name__ == '__main__':
     # Make a game instance & run the game.
