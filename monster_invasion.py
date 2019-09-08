@@ -27,3 +27,8 @@ def run_game(self):
 
           # Make most recently drawn screen visible.
           pygame.dispaly.flip()
+
+if __name__ == '__main__':
+  # Make a game instance & run the game.
+  mi = MonsterInvasion()
+  mi.run_game()
