@@ -13,7 +13,7 @@ class Archer:
     self.rect = self.image.get_rect()
 
     # Start each new archer at bottom center of screen.
-    self.rect.modbottom = self.screen_rect.midbottom
+    self.rect.midbottom = self.screen_rect.midbottom
 
   def blitme(self):
     # Draw archer at its current location.
