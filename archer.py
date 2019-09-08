@@ -15,6 +15,9 @@ class Archer:
     # Start each new archer at bottom center of screen.
     self.rect.midbottom = self.screen_rect.midbottom
 
+    # Movement flag
+    self.moving_right = False
+
   def blitme(self):
     # Draw archer at its current location.
     self.screen.blit(self.image, self.rect)
