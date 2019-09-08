@@ -26,8 +26,10 @@ class MonsterInvasion:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
-                    # Move archer right
-                    self.archer.rect.x += 1
+                    self.archer.moving_right = True
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT:
+                    self.archer.moving_right = False
 
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
@@ -41,6 +43,7 @@ class MonsterInvasion:
         # Start the main game loop.
         while True:
             self._check_events()
+            self.archer.update()
             self._update_screen()
 
 if __name__ == '__main__':
