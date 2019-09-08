@@ -18,6 +18,7 @@ class MonsterInvasion:
         pygame.display.set_caption("Monster Invasion")
 
         self.archer = Archer(self)
+        self.arrows = pygame.sprite.Group()
 
     def _check_events(self):
         # Watch for keyboard/mouse events.
@@ -58,6 +59,7 @@ class MonsterInvasion:
         while True:
             self._check_events()
             self.archer.update()
+            self.arrows.update()
             self._update_screen()
 
 if __name__ == '__main__':
