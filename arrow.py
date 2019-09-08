@@ -17,3 +17,11 @@ class Arrow(Sprite):
 
         # Store the arrow's position as decimal value.
         self.y = float(self.rect.y)
+
+    def update(self):
+        # Move arrow up screen.
+        # Update the decimal position of arrow.
+        self.y -= self.settings.arrow_speed
+        
+        #update rect position.
+        self.rect.y = self.y
