@@ -13,7 +13,8 @@ class MonsterInvasion:
       pygame.init()
       self.settings = Settings()
 
-      self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
+      self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height))
       pygame.display.set_caption("Monster Invasion")
 
       self.archer = Archer(self)
@@ -26,12 +27,12 @@ class MonsterInvasion:
           if event.type == pygame.QUIT:
             sys.exit()
 
-            # Redraw the screen during each pass of the loop.
-            self.screen.fill(self.settings.bg_color)
-            self.archer.blitme()
+          # Redraw the screen during each pass of the loop.
+          self.screen.fill(self.settings.bg_color)
+          self.archer.blitme()
 
-            # Make most recently drawn screen visible.
-            pygame.dispaly.flip()
+          # Make most recently drawn screen visible.
+          pygame.display.flip()
 
 if __name__ == '__main__':
   # Make a game instance & run the game.
