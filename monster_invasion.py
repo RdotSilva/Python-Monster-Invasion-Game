@@ -20,22 +20,24 @@ class MonsterInvasion:
       self.archer = Archer(self)
 
   def _check_events(self):
-    # Watch for keyboard/mouse events.
+      # Watch for keyboard/mouse events.
       for event in pygame.event.get():
         if event.type == pygame.QUIT:
           sys.exit()
+
+  def _update_screen(self):
+      # Redraw the screen during each pass of the loop.
+      self.screen.fill(self.settings.bg_color)
+      self.archer.blitme()
+
+      # Make most recently drawn screen visible.
+      pygame.display.flip()
 
   def run_game(self):
       # Start the main game loop.
       while True:
         self._check_events()
-
-          # Redraw the screen during each pass of the loop.
-          self.screen.fill(self.settings.bg_color)
-          self.archer.blitme()
-
-          # Make most recently drawn screen visible.
-          pygame.display.flip()
+        self._update_screen()
 
 if __name__ == '__main__':
   # Make a game instance & run the game.
