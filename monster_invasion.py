@@ -55,6 +55,16 @@ class MonsterInvasion:
             new_arrow = Arrow(self)
             self.arrows.add(new_arrow)
 
+    def _update_arrows(self):
+        # Update position of arrows & get rid of old arrows.
+        # Update arrow positions.
+        self.arrows.update()
+
+        # Get rid of arrows once they are off screen.
+        for arrow in self.arrows.copy():
+            if arrow.rect.bottom <= 0:
+                self.arrows.remove(arrow)
+
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
         self.screen.fill(self.settings.bg_color)
@@ -71,14 +81,7 @@ class MonsterInvasion:
         while True:
             self._check_events()
             self.archer.update()
-            self.arrows.update()
-
-            # Get rid of arrows once they are off screen.
-            for arrow in self.arrows.copy():
-                if arrow.rect.bottom <= 0:
-                    self.arrows.remove(arrow)
-            print(len(self.arrows))
-
+            self._update_arrows()
             self._update_screen()
 
 if __name__ == '__main__':
