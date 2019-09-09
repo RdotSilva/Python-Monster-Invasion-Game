@@ -17,3 +17,4 @@ class Settings:
         self.arrow_width = 3
         self.arrow_height = 15
         self.arrow_color = (60, 60, 60)
+        self.arrows_allowed = 3
