@@ -82,6 +82,7 @@ class MonsterInvasion:
 
         for arrow in self.arrows.sprites():
             arrow.draw_arrow()
+        self.monsters.draw(self.screen)
 
         # Make most recently drawn screen visible.
         pygame.display.flip()
