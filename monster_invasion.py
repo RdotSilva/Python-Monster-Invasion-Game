@@ -25,6 +25,12 @@ class MonsterInvasion:
 
         self._create_horde()
 
+    def _create_horde(self):
+        # Create a horde of monsters.
+        # Make a monster.
+        monster = Monster(self)
+        self.monsters.add(monster)
+
     def _check_events(self):
         # Watch for keyboard/mouse events.
         for event in pygame.event.get():
