@@ -71,6 +71,13 @@ class MonsterInvasion:
             self._check_events()
             self.archer.update()
             self.arrows.update()
+
+            # Get rid of arrows once they are off screen.
+            for arrow in self.arrows.copy():
+                if arrow.rect.bottom <= 0:
+                    self.arrows.remove(arrow)
+            print(len(self.arrows))
+            
             self._update_screen()
 
 if __name__ == '__main__':
