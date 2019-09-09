@@ -51,8 +51,9 @@ class MonsterInvasion:
 
     def _fire_arrow(self):
         # Create new arrow and add to arrow group.
-        new_arrow = Arrow(self)
-        self.arrows.add(new_arrow)
+        if len(self.arrows) < self.settings.arrows_allowed:
+            new_arrow = Arrow(self)
+            self.arrows.add(new_arrow)
 
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
@@ -77,7 +78,7 @@ class MonsterInvasion:
                 if arrow.rect.bottom <= 0:
                     self.arrows.remove(arrow)
             print(len(self.arrows))
-            
+
             self._update_screen()
 
 if __name__ == '__main__':
