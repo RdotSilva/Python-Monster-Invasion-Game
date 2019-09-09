@@ -5,6 +5,7 @@ import pygame
 from settings import Settings
 from archer import Archer
 from arrow import Arrow
+from monster import Monster
 
 class MonsterInvasion:
     # Class for game assets/behavior.
@@ -20,6 +21,9 @@ class MonsterInvasion:
 
         self.archer = Archer(self)
         self.arrows = pygame.sprite.Group()
+        self.monsters = pygame.sprite.Group()
+
+        self._create_horde()
 
     def _check_events(self):
         # Watch for keyboard/mouse events.
