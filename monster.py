@@ -10,7 +10,8 @@ class Monster(Sprite):
         self.screen = mi_game.screen
 
         # Load the monster image and set its rect attribute.
-        self.image = pygame.image.load('/images/monster.bmp')
+        self.image = pygame.image.load('images/monster.bmp')
+        
         self.rect = self.image.get_rect()
 
         # Start each new monster near the top left of screen.
