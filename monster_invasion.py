@@ -55,7 +55,8 @@ class MonsterInvasion:
         self.monsters.add(monster)
 
     def _update_monsters(self):
-        # Update the positions of all monsters in the horde.
+        # Check if horde is at edge, then update the positions of all monsters in the horde.
+        self._check_horde_edges()
         self.monsters.update()
 
     def _check_horde_edges(self):
