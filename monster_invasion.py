@@ -58,12 +58,15 @@ class MonsterInvasion:
         # Update the positions of all monsters in the horde.
         self.monsters.update()
 
-    def _check_fleet_edges(self):
+    def _check_horde_edges(self):
         # Respond appropriately if monsters have reached an edge of screen.
         for monster in self.monsters.sprites():
             if monster.check_edges():
                 self._change_horde_direction()
                 break
+
+    def _change_fleet_direction(self):
+        # Drop the entire h
         
     def _check_events(self):
         # Watch for keyboard/mouse events.
