@@ -8,6 +8,7 @@ class Monster(Sprite):
         # Initialize the monster and set its starting position.
         super().__init__()
         self.screen = mi_game.screen
+        self.settings = mi_game.settings
 
         # Load the monster image and set its rect attribute.
         self.image = pygame.image.load('images/monster.bmp')
