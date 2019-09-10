@@ -36,11 +36,15 @@ class MonsterInvasion:
 
         # Create the first row of monsters.
         for monster_number in range(number_monsters_x):
-            # Create a monster and place it in a row.
-            monster = Monster(self)
-            monster.x = monster_width + 2 * monster_width * monster_number
-            monster.rect.x = monster.x
-            self.monsters.add(monster)
+            self._create_monster
+
+    def _create_monster(self, monster_number):
+         # Create a monster and place it in a row.
+        monster = Monster(self)
+        monster_width = monster.rect.width
+        monster.x = monster_width + 2 * monster_width * monster_number
+        monster.rect.x = monster.x
+        self.monsters.add(monster)
 
         
     def _check_events(self):
