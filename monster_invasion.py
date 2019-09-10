@@ -36,7 +36,7 @@ class MonsterInvasion:
 
         # Create the first row of monsters.
         for monster_number in range(number_monsters_x):
-            self._create_monster
+            self._create_monster(monster_number)
 
     def _create_monster(self, monster_number):
          # Create a monster and place it in a row.
