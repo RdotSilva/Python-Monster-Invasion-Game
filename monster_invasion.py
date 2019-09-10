@@ -117,6 +117,7 @@ class MonsterInvasion:
             self._check_events()
             self.archer.update()
             self._update_arrows()
+            self._update_monsters()
             self._update_screen()
 
 if __name__ == '__main__':
