@@ -65,8 +65,11 @@ class MonsterInvasion:
                 self._change_horde_direction()
                 break
 
-    def _change_fleet_direction(self):
-        # Drop the entire h
+    def _change_horde_direction(self):
+        # Drop the entire horde and change horde direction.
+        for monster in self.monsters.sprites():
+            monster.rect.y += self.settings.horde_drop_speed
+        self.settings.horde_direction *= -1
         
     def _check_events(self):
         # Watch for keyboard/mouse events.
