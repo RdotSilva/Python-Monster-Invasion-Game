@@ -27,10 +27,22 @@ class MonsterInvasion:
 
     def _create_horde(self):
         # Create a horde of monsters.
-        # Make a monster.
+        # Make a monster and find the number of monsters in a row.
+        # Spacing between each monster is equal to one monster width.
         monster = Monster(self)
-        self.monsters.add(monster)
+        monster_width = monster.rect.width
+        available_space_x = self.settings.screen_width - (2 * monster_width)
+        number_monsters_x = available_space_x // (2 * monster_width)
 
+        # Create the first row of monsters.
+        for monster_number in range(number_monsters_x):
+            # Create a monster and place it in a row.
+            monster = Monster(self)
+            monster.x = monster_width + 2 * monster_width * monster_number
+            monster.rect.x = monster.x
+            self.monsters.add(monster)
+
+        
     def _check_events(self):
         # Watch for keyboard/mouse events.
         for event in pygame.event.get():
