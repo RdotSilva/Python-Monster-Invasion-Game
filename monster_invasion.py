@@ -36,13 +36,14 @@ class MonsterInvasion:
 
         # Determine the number of rows of monsters that fit on the screen.
         archer_height = self.archer.rect.height
-        available_space_y = (self.settings.screen_height - (3 * monster_heigh) - archer_height)
+        available_space_y = (self.settings.screen_height - (3 * monster_height) - archer_height)
 
         number_rows = available_space_y // (2 * monster_height)
 
-        # Create the first row of monsters.
-        for monster_number in range(number_monsters_x):
-            self._create_monster(monster_number)
+        # Create full horde of monsters.
+        for row_number in range(number_rows):
+            for monster_number in range(number_monsters_x):
+                self._create_monster(monster_number, row_number)
 
     def _create_monster(self, monster_number):
         # Create a monster and place it in a row.
