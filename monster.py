@@ -26,9 +26,9 @@ class Monster(Sprite):
         # Return True if monster is at edge of screen.
         screen_rect = self.screen.get_rect()
         if self.rect.right >= screen_rect.right or self.rect.left <= 0:
-            return Trues
+            return True
 
     def update(self):
-        # Move the monster to the right.
-        self.x += self.settings.monster_speed
+        # Move the monster left or right.
+        self.x += (self.settings.monster_speed * self.settings.horde_direction)
         self.rect.x = self.x
