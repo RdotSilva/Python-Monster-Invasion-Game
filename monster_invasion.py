@@ -54,6 +54,9 @@ class MonsterInvasion:
         monster.rect.y = monster.rect.height + 2 * monster.rect.height * row_number
         self.monsters.add(monster)
 
+    def _update_monsters(self):
+        # Update the positions of all monsters in the horde.
+        self.monsters.update()
         
     def _check_events(self):
         # Watch for keyboard/mouse events.
