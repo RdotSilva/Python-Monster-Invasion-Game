@@ -22,6 +22,12 @@ class Monster(Sprite):
         # Store the monsters exact horizontal position.
         self.x = float(self.rect.x)
 
+    def check_edges(self):
+        # Return True if monster is at edge of screen.
+        screen_rect = self.screen.get_rect()
+        if self.rect.right >= screen_rect.right or self.rect.left <= 0:
+            return Trues
+
     def update(self):
         # Move the monster to the right.
         self.x += self.settings.monster_speed
