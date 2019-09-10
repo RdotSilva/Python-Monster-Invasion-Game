@@ -30,16 +30,22 @@ class MonsterInvasion:
         # Make a monster and find the number of monsters in a row.
         # Spacing between each monster is equal to one monster width.
         monster = Monster(self)
-        monster_width = monster.rect.width
+        monster_width, monster_height = monster.rect.size
         available_space_x = self.settings.screen_width - (2 * monster_width)
         number_monsters_x = available_space_x // (2 * monster_width)
+
+        # Determine the number of rows of monsters that fit on the screen.
+        archer_height = self.archer.rect.height
+        available_space_y = (self.settings.screen_height - (3 * monster_heigh) - archer_height)
+
+        number_rows = available_space_y // (2 * monster_height)
 
         # Create the first row of monsters.
         for monster_number in range(number_monsters_x):
             self._create_monster(monster_number)
 
     def _create_monster(self, monster_number):
-         # Create a monster and place it in a row.
+        # Create a monster and place it in a row.
         monster = Monster(self)
         monster_width = monster.rect.width
         monster.x = monster_width + 2 * monster_width * monster_number
