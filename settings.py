@@ -23,4 +23,4 @@ class Settings:
         self.monster_speed = 1.0
         self.horde_drop_speed = 10
         # horde_direction of 1 represents right; -1 represents left.
-        self.fleet_direction = 1
+        self.horde_direction = 1
