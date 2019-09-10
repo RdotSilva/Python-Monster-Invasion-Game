@@ -18,3 +18,6 @@ class Settings:
         self.arrow_height = 15
         self.arrow_color = (60, 60, 60)
         self.arrows_allowed = 3
+
+        # Monster settings
+        self.monster_speed = 1.0
