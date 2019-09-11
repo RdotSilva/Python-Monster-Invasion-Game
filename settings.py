@@ -21,6 +21,6 @@ class Settings:
 
         # Monster settings
         self.monster_speed = 1.0
-        self.horde_drop_speed = 10
+        self.horde_drop_speed = 100
         # horde_direction of 1 represents right; -1 represents left.
         self.horde_direction = 1
