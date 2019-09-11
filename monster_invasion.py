@@ -59,6 +59,10 @@ class MonsterInvasion:
         self._check_horde_edges()
         self.monsters.update()
 
+        # Look for monster-archer collisions.
+        if pygame.sprite.spritecollideany(self.archer, self.monsters):
+            print("Archer hit!!!")
+
     def _check_horde_edges(self):
         # Respond appropriately if monsters have reached an edge of screen.
         for monster in self.monsters.sprites():
