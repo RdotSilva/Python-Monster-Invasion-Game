@@ -11,6 +11,7 @@ class Settings:
 
         # Archer settings
         self.archer_speed = 1.5
+        self.life_limit = 3
 
         # Arrow settings
         self.arrow_speed = 1.5
