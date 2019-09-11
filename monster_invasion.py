@@ -136,6 +136,22 @@ class MonsterInvasion:
             self.arrows.empty()
             self._create_horde()
 
+    def _archer_hit(self):
+        # Respond to the archer being hit by a monster.
+        # Decrement lives_left.
+        self.stats.lives_left -= 1
+
+        # Get rid of any remaining monsters/arrows.
+        self.monsters.empty()
+        self.arrows.empty()
+
+        # Create a new horde & center the archer.
+        self._create_horde()
+        self.archer.center_archer()
+
+        # Pause
+        sleep(0.5)
+
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
         self.screen.fill(self.settings.bg_color)
