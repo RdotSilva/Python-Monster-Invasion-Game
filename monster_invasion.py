@@ -115,9 +115,11 @@ class MonsterInvasion:
         for arrow in self.arrows.copy():
             if arrow.rect.bottom <= 0:
                 self.arrows.remove(arrow)
+        self._check_arrow_monster_collisions()
 
-        # Check for any arrows that have hit monsters.
-        # If so, get rid of arrow and monster.
+    def _check_arrow_monster_collisions(self):
+        # Respond to arrow-monster collisions.
+        # Remove any arrows/monsters that have collided.
         collisions = pygame.sprite.groupcollide(self.arrows, self.monsters, True, True)
 
         if not self.monsters:
