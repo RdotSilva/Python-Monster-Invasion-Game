@@ -120,6 +120,11 @@ class MonsterInvasion:
         # If so, get rid of arrow and monster.
         collisions = pygame.sprite.groupcollide(self.arrows, self.monsters, True, True)
 
+        if not self.monsters:
+            # Destroy existing arrows & create new horde.
+            self.arrows.empty()
+            self._create_horde()
+
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
         self.screen.fill(self.settings.bg_color)
