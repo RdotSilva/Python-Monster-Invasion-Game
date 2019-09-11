@@ -1,8 +1,10 @@
 import sys
+from time import sleep
 
 import pygame
 
 from settings import Settings
+from game_stats import GameStats
 from archer import Archer
 from arrow import Arrow
 from monster import Monster
@@ -18,6 +20,9 @@ class MonsterInvasion:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Monster Invasion")
+
+        # Create instance to store game stats.
+        self.stats = GameStats(self)
 
         self.archer = Archer(self)
         self.arrows = pygame.sprite.Group()
