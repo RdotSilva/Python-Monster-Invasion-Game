@@ -80,7 +80,9 @@ class MonsterInvasion:
         screen_rect = self.screen.get_rect()
         for monster in self.monsters.sprites():
             if monster.rect.bottom >= screen_rect.bottom:
-             
+                # Treat this the same as if archer got hit.
+                self._archer_hit()
+                break
 
     def _change_horde_direction(self):
         # Drop the entire horde and change horde direction.
