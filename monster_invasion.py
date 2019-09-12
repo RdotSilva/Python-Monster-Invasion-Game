@@ -75,6 +75,13 @@ class MonsterInvasion:
                 self._change_horde_direction()
                 break
 
+    def _check_monster_bottom(self):
+        # Check if any monsters have reached the bottom of the screen.
+        screen_rect = self.screen.get_rect()
+        for monster in self.monsters.sprites():
+            if monster.rect.bottom >= screen_rect.bottom:
+             
+
     def _change_horde_direction(self):
         # Drop the entire horde and change horde direction.
         for monster in self.monsters.sprites():
