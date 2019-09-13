@@ -68,6 +68,9 @@ class MonsterInvasion:
         if pygame.sprite.spritecollideany(self.archer, self.monsters):
             self._archer_hit()
 
+        # Look for monsters hitting the bottom of screen.
+        self._check_monsters_bottom()
+
     def _check_horde_edges(self):
         # Respond appropriately if monsters have reached an edge of screen.
         for monster in self.monsters.sprites():
@@ -75,7 +78,7 @@ class MonsterInvasion:
                 self._change_horde_direction()
                 break
 
-    def _check_monster_bottom(self):
+    def _check_monsters_bottom(self):
         # Check if any monsters have reached the bottom of the screen.
         screen_rect = self.screen.get_rect()
         for monster in self.monsters.sprites():
