@@ -5,6 +5,7 @@ import pygame
 
 from settings import Settings
 from game_stats import GameStats
+from button import Button
 from archer import Archer
 from arrow import Arrow
 from monster import Monster
@@ -29,6 +30,9 @@ class MonsterInvasion:
         self.monsters = pygame.sprite.Group()
 
         self._create_horde()
+
+        # Create a play button.
+        self.play_button = Button(self, "Play")
 
     def _create_horde(self):
         # Create a horde of monsters.
@@ -188,7 +192,7 @@ class MonsterInvasion:
                 self.archer.update()
                 self._update_arrows()
                 self._update_monsters()
-                
+
             self._update_screen()
 
 if __name__ == '__main__':
