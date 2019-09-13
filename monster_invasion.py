@@ -109,6 +109,11 @@ class MonsterInvasion:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
                 self._check_keyup_events(event)
+    
+    def _check_play_button(self, mouse_pos):
+        # Start a new game when player clicks Play button.
+        if self.play_button.rect.collidepoint(mouse_pos):
+            self.stats.game_active = True
 
     def _check_keydown_events(self, event):
         # Respond to keypresses.
