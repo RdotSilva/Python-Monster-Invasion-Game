@@ -5,6 +5,8 @@ class GameStats:
         # Init stats
         self.settings = mi_game.settings
         self.reset_stats()
+        # Start the game in active state.
+        self.game_active = True
 
     def reset_stats(self):
         # Init stats that can change during the game.
