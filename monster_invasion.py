@@ -180,6 +180,10 @@ class MonsterInvasion:
             arrow.draw_arrow()
         self.monsters.draw(self.screen)
 
+        # Draw the play button if game is inactive.
+        if not self.stats.game_active:
+            self.play_button.draw_button()
+
         # Make most recently drawn screen visible.
         pygame.display.flip()
 
