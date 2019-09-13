@@ -151,7 +151,7 @@ class MonsterInvasion:
     def _archer_hit(self):
         # Respond to the archer being hit by a monster.
         if self.stats.lives_left > 0:
-             # Decrement lives_left.
+            # Decrement lives_left.
             self.stats.lives_left -= 1
 
             # Get rid of any remaining monsters/arrows.
@@ -183,9 +183,12 @@ class MonsterInvasion:
         # Start the main game loop.
         while True:
             self._check_events()
-            self.archer.update()
-            self._update_arrows()
-            self._update_monsters()
+
+            if self.stats.game_active:
+                self.archer.update()
+                self._update_arrows()
+                self._update_monsters()
+                
             self._update_screen()
 
 if __name__ == '__main__':
