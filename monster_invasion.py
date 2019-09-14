@@ -173,6 +173,7 @@ class MonsterInvasion:
             # Destroy existing arrows & create new horde.
             self.arrows.empty()
             self._create_horde()
+            self.settings.increase_speed()
 
     def _archer_hit(self):
         # Respond to the archer being hit by a monster.
