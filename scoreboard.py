@@ -14,5 +14,10 @@ class Scoreboard:
         self.text_color = (30, 30, 30)
         self.font = pygame.font.SysFont(None, 48)
 
-        # prepare initial score image.
+        # Prepare initial score image.
         self.prep_score()
+
+    def prep_score(self):
+        # Turn the score into a rendered image.
+        score_str = str(self.stats.score)
+        self.score_image = self.font.render(score_str, True, self.text_color, self.settings.bg_color)
