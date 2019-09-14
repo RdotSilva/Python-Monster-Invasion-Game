@@ -35,6 +35,12 @@ class Settings:
         self.archer_speed = 1.5
         self.arrow_speed = 3.0
         self.monster_speed = 1.0
-        
+
         # horde_direction of 1 represents right; -1 represents left.
         self.horde_direction = 1
+
+    def increase_speed(self):
+        # Increase speed settings
+        self.archer_speed *= self.speedup_scale
+        self.arrow_speed *= self.speedup_scale
+        self.monster_speed *= self.speedup_scale
