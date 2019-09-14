@@ -22,11 +22,19 @@ class Settings:
 
         # Monster settings
         self.monster_speed = 1.0
-        self.horde_drop_speed = 100
-        # horde_direction of 1 represents right; -1 represents left.
-        self.horde_direction = 1
+        self.horde_drop_speed = 10
+        
 
         # How quickly the game speeds up
         self.speedup_scale = 1.1
 
         self.initialize_dynamic_settings()
+
+    def initialize_dynamic_settings(self):
+        # Initialize settings that change through the game.
+        self.archer_speed = 1.5
+        self.arrow_speed = 3.0
+        self.monster_speed = 1.0
+        
+        # horde_direction of 1 represents right; -1 represents left.
+        self.horde_direction = 1
