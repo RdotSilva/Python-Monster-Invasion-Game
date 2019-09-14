@@ -113,7 +113,17 @@ class MonsterInvasion:
     def _check_play_button(self, mouse_pos):
         # Start a new game when player clicks Play button.
         if self.play_button.rect.collidepoint(mouse_pos):
+            # Reset the game statistics.
+            self.stats.reset_stats()
             self.stats.game_active = True
+
+            # Get rid of any remaining monsters & bullets.
+            self.monsters.empty()
+            self.arrows.empty()
+
+            # Create a new horde & center archer.
+            self._create_horde()
+            self.archer.center_archer()
 
     def _check_keydown_events(self, event):
         # Respond to keypresses.
