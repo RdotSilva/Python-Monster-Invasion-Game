@@ -127,7 +127,7 @@ class MonsterInvasion:
             self.archer.center_archer()
 
             # Hide mouse cursor
-            pygame.mouse.set_visible(false)
+            pygame.mouse.set_visible(False)
 
     def _check_keydown_events(self, event):
         # Respond to keypresses.
