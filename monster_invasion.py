@@ -126,6 +126,9 @@ class MonsterInvasion:
             self._create_horde()
             self.archer.center_archer()
 
+            # Hide mouse cursor
+            pygame.mouse.set_visible(false)
+
     def _check_keydown_events(self, event):
         # Respond to keypresses.
         if event.key == pygame.K_RIGHT:
@@ -189,6 +192,7 @@ class MonsterInvasion:
             sleep(0.5)
         else:
             self.stats.game_active = False
+            pygame.mouse.set_visible(True)
 
     def _update_screen(self):
         # Redraw the screen during each pass of the loop.
