@@ -2,7 +2,7 @@ class Settings:
     # Stores all of the settings for the game.
 
     def __init__(self):
-        # Initialize settings
+        # Initialize static settings
 
         # Screen settings
         self.screen_width = 1200
@@ -25,3 +25,8 @@ class Settings:
         self.horde_drop_speed = 100
         # horde_direction of 1 represents right; -1 represents left.
         self.horde_direction = 1
+
+        # How quickly the game speeds up
+        self.speedup_scale = 1.1
+
+        self.initialize_dynamic_settings()
