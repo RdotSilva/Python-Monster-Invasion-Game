@@ -24,8 +24,6 @@ Press LEFT or RIGHT arrow keys to move left or right, press SPACE to fire an arr
 
 ## Screenshots
 
-Coming soon...
-
 ![Monster Invasion](https://i.imgur.com/0k4CmmP.png "Monster Invsasion")
 
 ## Built With
