@@ -5,6 +5,7 @@ import pygame
 
 from settings import Settings
 from game_stats import GameStats
+from scoreboard import Scoreboard
 from button import Button
 from archer import Archer
 from arrow import Arrow
@@ -22,8 +23,9 @@ class MonsterInvasion:
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Monster Invasion")
 
-        # Create instance to store game stats.
+        # Create instance of game stats & scoreboard.
         self.stats = GameStats(self)
+        self.sb = Scoreboard(self)
 
         self.archer = Archer(self)
         self.arrows = pygame.sprite.Group()
