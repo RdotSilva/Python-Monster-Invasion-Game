@@ -52,4 +52,3 @@ class Settings:
         self.monster_speed *= self.speedup_scale
 
         self.monster_points = int(self.monster_points * self.score_scale)
-        print(self.monster_points)
