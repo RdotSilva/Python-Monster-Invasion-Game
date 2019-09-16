@@ -179,6 +179,7 @@ class MonsterInvasion:
             for monsters in collisions.values():
                 self.stats.score += self.settings.monster_points
             self.sb.prep_score()
+            self.sb.check_high_score()
 
         if not self.monsters:
             # Destroy existing arrows & create new horde.
