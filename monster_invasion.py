@@ -174,6 +174,10 @@ class MonsterInvasion:
         # Remove any arrows/monsters that have collided.
         collisions = pygame.sprite.groupcollide(self.arrows, self.monsters, True, True)
 
+        if collisions:
+            self.stats.score += self.settings.monster_points
+            self.sb.prep_score()
+
         if not self.monsters:
             # Destroy existing arrows & create new horde.
             self.arrows.empty()
