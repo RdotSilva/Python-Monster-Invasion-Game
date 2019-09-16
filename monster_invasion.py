@@ -176,7 +176,8 @@ class MonsterInvasion:
         collisions = pygame.sprite.groupcollide(self.arrows, self.monsters, True, True)
 
         if collisions:
-            self.stats.score += self.settings.monster_points
+            for monsters in collisions.values():
+                self.stats.score += self.settings.monster_points
             self.sb.prep_score()
 
         if not self.monsters:
