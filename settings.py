@@ -39,6 +39,9 @@ class Settings:
         # horde_direction of 1 represents right; -1 represents left.
         self.horde_direction = 1
 
+        # Scoring
+        self.monster_points = 50
+
     def increase_speed(self):
         # Increase speed settings
         self.archer_speed *= self.speedup_scale
