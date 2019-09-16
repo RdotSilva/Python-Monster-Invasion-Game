@@ -28,7 +28,7 @@ class Scoreboard:
         self.high_score_rect = self.high_score_image.get_rect()
         self.high_score_rect.centerx = self.screen_rect.centerx
         self.high_score_rect.top = self.score_rect.top
-        
+
     def prep_score(self):
         # Turn the score into a rendered image.
         rounded_score = round(self.stats.score, -1)
@@ -43,3 +43,10 @@ class Scoreboard:
     def show_score(self):
         # Draw score to screen.
         self.screen.blit(self.score_image, self.score_rect)
+        self.screen.blit(self.high_score_image, self.high_score_rect)
+
+    def check_high_score(self):
+        # Check to see if there's a new high score.
+        if self.stats.score > self.stats.high_score:
+            self.stats.high_score = self.stats.score
+            self.prep_high_score()
