@@ -28,6 +28,9 @@ class Settings:
         # How quickly the game speeds up
         self.speedup_scale = 1.1
 
+        # How quickly the monster point values increase
+        self.score_scale = 1.5
+
         self.initialize_dynamic_settings()
 
     def initialize_dynamic_settings(self):
@@ -43,7 +46,10 @@ class Settings:
         self.monster_points = 50
 
     def increase_speed(self):
-        # Increase speed settings
+        # Increase speed settings & monster point values
         self.archer_speed *= self.speedup_scale
         self.arrow_speed *= self.speedup_scale
         self.monster_speed *= self.speedup_scale
+
+        self.monster_points = int(self.monster_points * self.score_scale)
+        print(self.monster_points)
