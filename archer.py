@@ -1,10 +1,12 @@
 import pygame
+from pygame.sprite import Sprite
 
-class Archer:
+class Archer(Sprite):
     # A class to manage the archer.
 
     def __init__(self, mi_game):
         # Initialize archer and set its starting position.
+        super().__init__()
         self.screen = mi_game.screen
         self.settings = mi_game.settings
         self.screen_rect = mi_game.screen.get_rect()
