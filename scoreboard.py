@@ -9,7 +9,6 @@ class Scoreboard:
         self.screen_rect = self.screen.get_rect()
         self.settings = mi_game.settings
         self.stats = mi_game.stats
-        self.prep_level()
 
         # Font settings for scoring info.
         self.text_color = (30, 30, 30)
@@ -18,6 +17,7 @@ class Scoreboard:
         # Prepare initial score image.
         self.prep_score()
         self.prep_high_score()
+        self.prep_level()
 
     def prep_high_score(self):
         # Turn the high score into a rendered image.
