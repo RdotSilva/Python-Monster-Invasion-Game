@@ -124,6 +124,7 @@ class MonsterInvasion:
             self.stats.game_active = True
             self.sb.prep_score()
             self.sb.prep_level()
+            self.sb.prep_archers()
 
             # Get rid of any remaining monsters & bullets.
             self.monsters.empty()
@@ -195,8 +196,9 @@ class MonsterInvasion:
     def _archer_hit(self):
         # Respond to the archer being hit by a monster.
         if self.stats.lives_left > 0:
-            # Decrement lives_left.
+            # Decrement lives_left & update scoreboard.
             self.stats.lives_left -= 1
+            self.sb.prep_archers()
 
             # Get rid of any remaining monsters/arrows.
             self.monsters.empty()
