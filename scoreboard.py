@@ -1,4 +1,7 @@
 import pygame.font
+from pygame.sprite import Group
+from archer import Archer
+
 
 class Scoreboard:
     # Class to report scoring info.
