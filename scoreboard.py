@@ -5,6 +5,7 @@ class Scoreboard:
 
     def __init__(self, mi_game):
         # Initialize scorekeeping attributes.
+        self.mi_game = mi_game
         self.screen = mi_game.screen
         self.screen_rect = self.screen.get_rect()
         self.settings = mi_game.settings
@@ -18,6 +19,7 @@ class Scoreboard:
         self.prep_score()
         self.prep_high_score()
         self.prep_level()
+        self.prep_archers()
 
     def prep_high_score(self):
         # Turn the high score into a rendered image.
@@ -62,3 +64,12 @@ class Scoreboard:
         self.level_rect = self.level_image.get_rect()
         self.level_rect.right = self.score_rect.right
         self.level_rect.top = self.score_rect.bottom + 10
+    
+    def prep_archers(self):
+        # Show how many archer are left.
+        self.archers = Group()
+        for archer_number in range(self.stats.lives_left):
+            archer = Archer(self.mi_game)
+            archer.rect.x = 10 + archer_number * archer.rect.width
+            archer.rect.y = 10
+            self.archers.add(archer)
