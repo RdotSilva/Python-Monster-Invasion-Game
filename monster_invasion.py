@@ -187,6 +187,10 @@ class MonsterInvasion:
             self._create_horde()
             self.settings.increase_speed()
 
+            # Increase level.
+            self.stats.level += 1
+            self.sb.prep_level()
+
     def _archer_hit(self):
         # Respond to the archer being hit by a monster.
         if self.stats.lives_left > 0:
